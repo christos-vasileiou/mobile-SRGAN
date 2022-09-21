@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "######### Ax Platform tunes all the parameters of Denoise Network. Training starts! #########"
+python axTuning_allHyperparams.py --batch_size=8
+echo "\n"
+echo "Training is completed!"

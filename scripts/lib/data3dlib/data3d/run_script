@@ -1,0 +1,9 @@
+#!/bin/sh
+ml rm python2
+echo
+echo "########## Training using 3d Data ##########"
+echo
+python train3d.py --depth=2 --ndf=4 --nchan=16 --batch_size=2 --n_epochs=50 --perc=True --p2p=True --pretrained=False
+echo
+echo "It's Completed!"
+echo

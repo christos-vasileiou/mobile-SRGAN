@@ -1,0 +1,9 @@
+#!/bin/sh
+ml rm python2
+echo
+echo "########## Training is getting started! ##########"
+echo
+python train.py --dataset=dataset4w0v2 --n_epochs=100 --o_name='solid-epochs100' --nchan=32 --ndf=16 --depth=2 --retain_shape=True --batch_size=2 --perc=True --p2p=True
+echo
+echo "Training is completed!"
+echo

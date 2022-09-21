@@ -1,0 +1,15 @@
+#!/bin/sh
+ml rm python2
+echo
+echo "########## Training from scratch using SYNTHETIC data is getting started! ##########"
+echo
+epochs=50
+#python train.py --dataset='dataset4' --n_epochs=$epochs --o_name="solid-epochs$epochs" --nchan=32 --ndf=16 --depth=2 --retain_shape=True --batch_size=4 --perc=True --p2p=True
+echo
+echo "########## Transfer Learning using REAL data is getting started! ##########"
+echo
+epochs=5
+python transfer_learning.py --dataset='dataset4' --n_epochs=$epochs --o_name="solid-epochs$epochs" --nchan=32 --ndf=16 --depth=2 --retain_shape=True --batch_size=4 --perc=True --p2p=True --learning_rate=0.1
+echo
+echo "Training is completed!"
+echo

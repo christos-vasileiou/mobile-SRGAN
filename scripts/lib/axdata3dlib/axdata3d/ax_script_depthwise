@@ -1,0 +1,42 @@
+#!/bin/sh
+ml rm python2
+echo
+echo "########## Training using 3d Data -- Depth-Wise ##########"
+echo
+GREEN='\033[92m'
+NC='\033[0m'
+dataset=Real
+epochs=20
+kernel_size=3
+learning_rate=0.0001
+nchan=40
+ndf=100
+depth=2
+retain_shape=True
+batch_size=4
+perc=True
+p2p=True
+pretrained=False
+gentype=depthwise
+doutput_size=4
+input_size=64
+dataset_size=125
+echo -e "${GREEN} ########## $i gentype=$gentype using dataset=$dataset and patch=$doutput_size ########## ${NC}"
+python axtuning.py --n_epochs=$epochs \
+                --kernel_size=$kernel_size \
+                --learning_rate=$learning_rate \
+                --nchan=$nchan \
+                --ndf=$ndf \
+                --depth=$depth \
+                --retain_shape=$retain_shape \
+                --batch_size=$batch_size \
+                --perc=$perc \
+                --p2p=$p2p \
+                --pretrained=$pretrained \
+                --gentype=$gentype \
+                --doutput_size=$doutput_size \
+                --input_size=$input_size \
+                --dataset_size=$dataset_size
+echo
+echo "It's Completed!"
+echo

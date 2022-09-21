@@ -1,0 +1,39 @@
+#!/bin/sh
+ml rm python2
+echo
+echo "########## Training using 3d Data -- Depth-Wise ##########"
+echo
+GREEN='\033[92m'
+NC='\033[0m'
+dataset=Real
+epochs=1
+kernel_size=3
+nchan=64
+ndf=160
+depth=2
+retain_shape=True
+batch_size=8
+perc=True
+p2p=True
+pretrained=False
+gentype=mbd
+doutput_size=4
+input_size=64
+echo -e "${GREEN} ########## $i gentype=$gentype using dataset=$dataset and patch=$doutput_size ########## ${NC}"
+python train3d.py --n_epochs=$epochs \
+                --kernel_size=$kernel_size \
+                --nchan=$nchan \
+                --ndf=$ndf \
+                --depth=$depth \
+                --retain_shape=$retain_shape \
+                --batch_size=$batch_size \
+                --perc=$perc \
+                --p2p=$p2p \
+                --pretrained=$pretrained \
+                --gentype=$gentype \
+                --doutput_size=$doutput_size \
+                --input_size=$input_size
+echo
+echo "It's Completed!"
+echo
+#python train3d.py --perc=True --p2p=True --n_epochs=10 --depth=2 --kernel_size=3 --nchan=64 --ndf=64 --doutput_size=4 --gentype=depthwise

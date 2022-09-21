@@ -1,0 +1,66 @@
+#!/bin/sh
+ml rm python2
+echo
+echo "########## Training is getting started! ##########"
+echo
+GREEN='\033[92m'
+NC='\033[0m'
+dataset=dataset6
+epochs=50
+kernel_size=3
+nchan=32
+ndf=64
+depth=2
+retain_shape=True
+batch_size=16
+perc=True
+p2p=True
+pretrained=False
+gentype=depthwise
+i=1
+echo -e "${GREEN} ########## $i gentype=$gentype using dataset=$dataset ########## ${NC}"
+python train.py --dataset=$dataset \
+                --n_epochs=$epochs \
+                --o_name="solid-epochs$epochs" \
+                --kernel_size=$kernel_size \
+                --nchan=$nchan \
+                --ndf=$ndf \
+                --depth=$depth \
+                --retain_shape=$retain_shape \
+                --batch_size=$batch_size \
+                --perc=$perc \
+                --p2p=$p2p \
+                --pretrained=$pretrained \
+                --gentype=$gentype
+gentype=pipeline
+i=$((i+1))
+echo -e "${GREEN} ########## $i gentype=$gentype using dataset=$dataset ########## ${NC}"
+python train.py --dataset=$dataset \
+                --n_epochs=$epochs \
+                --o_name="solid-epochs$epochs" \
+                --kernel_size=$kernel_size \
+                --nchan=$nchan \
+                --ndf=$ndf \
+                --depth=$depth \
+                --retain_shape=$retain_shape \
+                --batch_size=$batch_size \
+                --perc=$perc \
+                --p2p=$p2p \
+                --pretrained=$pretrained \
+                --gentype=$gentype
+gentype=normal
+i=$((i+1))
+echo -e "${GREEN} ########## $i gentype=$gentype using dataset=$dataset ########## ${NC}"
+python train.py --dataset=$dataset \
+                --n_epochs=$epochs \
+                --o_name="solid-epochs$epochs" \
+                --kernel_size=$kernel_size \
+                --nchan=$nchan \
+                --ndf=$ndf \
+                --depth=$depth \
+                --retain_shape=$retain_shape \
+                --batch_size=$batch_size \
+                --perc=$perc \
+                --p2p=$p2p \
+                --pretrained=$pretrained \
+                --gentype=$gentype

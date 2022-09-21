@@ -1,0 +1,23 @@
+TI presentation
+notes.docx
+papers
+scripts/data
+scripts/.ipynb_checkpoints
+scripts/realdata/.ipynb_checkpoints
+scripts/realdata/.idea
+scripts/lib/axdata3dlib/axdata3d/wandb/
+scripts/lib/ax3dwganlib/ax3dwgan/wandb/
+matlab/*
+*.ipynb
+*.html
+*.pt
+*.png
+*.pdf
+*.pyc
+*/wandb/*
+*/__pycache__/*
+.idea
+
+
+# under testing
+scripts/testing

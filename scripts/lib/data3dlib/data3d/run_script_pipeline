@@ -1,0 +1,9 @@
+#!/bin/sh
+ml rm python2
+echo
+echo "########## Training using 3d Data -- Depth-Wise ##########"
+echo
+python train3d.py --depth=2 --ndf=6 --nchan=24 --batch_size=2 --n_epochs=25 --perc=True --p2p=True --pretrained=False --gentype=pipeline
+echo
+echo "It's Completed!"
+echo

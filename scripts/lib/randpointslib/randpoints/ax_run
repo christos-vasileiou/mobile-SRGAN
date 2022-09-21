@@ -1,0 +1,6 @@
+#!/bin/sh
+echo '######################## Training <Denoise Ax> model is getting started! ########################'
+echo '> It is going to tune all hyperparameters!'
+echo ''
+python axTuning_allHyperparams.py
+echo 'Training is completed'

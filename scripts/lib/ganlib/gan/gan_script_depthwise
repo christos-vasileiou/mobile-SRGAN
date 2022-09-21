@@ -1,0 +1,33 @@
+#!/bin/sh
+ml rm python2
+echo
+echo "########## Training is getting started! ##########"
+echo
+dataset=dataset4w0v2
+epochs=10
+kernel_size=3
+nchan=16
+ndf=16
+depth=2
+retain_shape=True
+batch_size=16
+perc=True
+p2p=True
+pretrained=False
+gentype=depthwise
+python train.py --dataset=$dataset \
+                --n_epochs=$epochs \
+                --o_name="solid-epochs$epochs" \
+                --kernel_size=$kernel_size \
+                --nchan=$nchan \
+                --ndf=$ndf \
+                --depth=$depth \
+                --retain_shape=$retain_shape \
+                --batch_size=$batch_size \
+                --perc=$perc \
+                --p2p=$p2p \
+                --pretrained=$pretrained \
+                --gentype=$gentype
+echo
+echo "Training is completed!"
+echo

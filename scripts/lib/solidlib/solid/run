@@ -1,0 +1,5 @@
+#!/bin/sh
+ml rm python2
+echo '######################## Training get started! ########################'
+python train.py --n_epochs=150
+echo 'Training is completed'
