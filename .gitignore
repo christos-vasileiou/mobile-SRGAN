@@ -16,6 +16,7 @@ matlab/*
 *.pyc
 */wandb/*
 */__pycache__/*
+*/*egg-info/*
 .idea
 
 
