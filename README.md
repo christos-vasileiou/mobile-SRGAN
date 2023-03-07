@@ -22,7 +22,10 @@ under scripts/lib/:
  
 ----
 
-Publication:
+# Publication:
+
 [Efficient CNN-Based Super Resolution Algorithms for Mmwave Mobile Radar Imaging](https://ieeexplore.ieee.org/document/9897190)
-Citation:
+
+# Citation:
+
 C. Vasileiou, J. Smith, S. Thiagarajan, M. Nigh, Y. Makris and M. Torlak, "Efficient CNN-Based Super Resolution Algorithms for Mmwave Mobile Radar Imaging," 2022 IEEE International Conference on Image Processing (ICIP), Bordeaux, France, 2022, pp. 3803-3807, doi: 10.1109/ICIP46576.2022.9897190.
